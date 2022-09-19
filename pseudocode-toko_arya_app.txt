@@ -1,0 +1,24 @@
+PROGRAM TokoArya
+
+FUNCTION countAmount (items)
+    STORE "total" with 0
+    WHILE "items" is not empty
+        ADD "total" by item.price
+        REMOVE item from items
+    
+    RETURN "total"
+END FUNCTION
+
+OPEN TokoAryaApp
+STORE "items" with empty
+
+WHILE ingin belanja
+    SEARCH barang
+    STORE "item" with barang
+    ADD item TO items
+
+STORE "amount" with countAmount(items)
+PRINT "amount"
+DO Lakukan Pembayaran
+
+OUTPUT Invoice
